@@ -17,7 +17,7 @@ body {
   font-family: $font-family;
   font-weight: 400;
   line-height: 1.5;
-  background-color: $color-bg;
+  background-color: $color-primary;
   color: $color-text;
   @include mobile {
     margin-bottom: 3rem;
@@ -30,8 +30,11 @@ a {
 }
 
 @media (hover: hover) {
-  a:hover {
-    color: $color-main;
+  a {
+    transition: color 0.3s ease;
+    &:hover {
+      color: $color-secondary;
+    }
   }
 }
 
@@ -50,4 +53,9 @@ img {
 
 iframe {
   border: 0;
+}
+
+.container {
+  max-width: 1660px;
+  margin: auto;
 }

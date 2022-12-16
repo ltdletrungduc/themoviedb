@@ -1,0 +1,106 @@
+@use "scss/" as *;
+
+.header {
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition: height 0.3s ease, background-color 0.3s ease;
+
+  &.is-fixed {
+    height: $header-fixed-height;
+    background-color: $color-primary;
+  }
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 20px;
+
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  @include mobile {
+    justify-content: center;
+    height: 5rem;
+    width: calc(100% - 30px);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 0 15px;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.header-link {
+  margin: 0 20px;
+  font-weight: 700;
+  position: relative;
+  font-size: 2.4rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    transition: width 0.5s ease;
+    background: linear-gradient($color-secondary 0%, $color-tertiary 100%);
+  }
+
+  &.is-active,
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  a {
+    padding: 5px 0;
+  }
+
+  @include mobile {
+    // CODE MOBILE
+    margin: 0 15px;
+    font-size: 1.6rem;
+  }
+  @media only screen and (max-width: 374px) {
+    margin: 0 10px;
+    font-size: 1.4rem;
+  }
+}
+
+.header-logo {
+  width: 240px;
+  position: relative;
+}
+
+.header-logo-image {
+  transition: opacity 0.3s ease;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .header.is-fixed &.is-full {
+    opacity: 0;
+  }
+  .header:not(.is-fixed) &.is-short {
+    opacity: 0;
+  }
+}
