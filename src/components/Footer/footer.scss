@@ -2,7 +2,7 @@
 
 .footer {
   position: relative;
-  padding: 100px 30px;
+  padding: 100px 30px 50px;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@
   width: 150px;
   margin: 0 auto 30px;
   @include mobile {
-    width: 115px;
+    width: 130px;
     margin-bottom: 20px;
   }
 }
@@ -41,7 +41,7 @@
   @include mobile {
     width: calc(100% / 2);
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 30px;
   }
 }

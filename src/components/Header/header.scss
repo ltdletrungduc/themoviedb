@@ -87,7 +87,9 @@
 
 .header-logo {
   width: 240px;
-  position: relative;
+  @include mobile {
+    width: 220px;
+  }
 }
 
 .header-logo-image {
