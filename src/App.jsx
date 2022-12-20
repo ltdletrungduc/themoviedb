@@ -3,6 +3,7 @@ import "App.scss";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "components/Header";
+import Footer from "components/Footer";
 
 function App() {
   return (
@@ -12,23 +13,8 @@ function App() {
         <Route path="users/*" element={<Users />} />
       </Routes> */}
       <Header />
+      <Footer />
     </Router>
-  );
-}
-
-function Home() {
-  return (
-    <div>
-      <p>THIS IS HOME</p>
-    </div>
-  );
-}
-
-function Users() {
-  return (
-    <div>
-      <p>THIS IS USERS</p>
-    </div>
   );
 }
 

@@ -1,0 +1,51 @@
+@use "scss/" as *;
+
+.footer {
+  position: relative;
+  padding: 100px 30px;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer-container {
+  max-width: 1000px;
+}
+
+.footer-logo {
+  display: block;
+  width: 150px;
+  margin: 0 auto 30px;
+  @include mobile {
+    width: 115px;
+    margin-bottom: 20px;
+  }
+}
+
+.footer-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  @include mobile {
+    justify-content: center;
+  }
+}
+
+.footer-navigation-list {
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 2.4rem;
+  font-weight: 700;
+  @include mobile {
+    width: calc(100% / 2);
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+}
+
+.footer-navigation-item ~ .footer-navigation-item {
+  margin-top: 10px;
+}
